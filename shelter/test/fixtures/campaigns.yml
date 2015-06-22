@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  beds: 1
+  amount_goal: 1
+  night_date: MyString
+
+two:
+  beds: 1
+  amount_goal: 1
+  night_date: MyString
