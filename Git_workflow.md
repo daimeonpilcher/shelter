@@ -24,7 +24,7 @@ $ git pull origin dev
 ```sh
 $ git push -u origin <branch name>
 ```
-5. Create a pull request by logging on to github using the link below and clicking :
+6. Create a pull request by logging on to github using the link below and clicking :
     - https://github.com/daimeonpilcher/shelter/branches/yours
 
 We'll review the changes going into the dev branch in the morning and afternoon and make a decision to push to the master.
