@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get "/welcome", to: "welcome#index"
   
-  resources :users
+  resources :users, except: [:new]
 
   resources :clients
 
