@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 		if @user
 			login(@user)
 			flash[:success] = "Successful login."
-			redirect_to new_user_path
+			redirect_to user_path(current_user)
 		else
 			flash[:error] = "Invalid email address or password.  Please try again."
 			redirect_to welcome_path
