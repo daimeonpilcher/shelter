@@ -9,7 +9,7 @@ $ git clone -b dev https://github.com/daimeonpilcher/shelter.git
 
 2 Confirm you are in the development branch.       
 ```sh
-$ git branch` *dev
+$ git branch #=> *dev
 ```
 
 3 Create your new branch for the task or feature you are working on.
