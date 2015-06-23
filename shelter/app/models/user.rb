@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	validates :email, confirmation: true
+	validates :email, confirmation: true, uniqueness: true
 	has_secure_password
 
 	has_many :donations, dependent: :destroy

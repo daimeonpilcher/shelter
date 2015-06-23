@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root to: "welcome#index"
 
   get "/welcome", to: "welcome#index"
@@ -13,4 +14,5 @@ Rails.application.routes.draw do
 
   post "/sessions", to: "sessions#create"
   get "/sessions", to: "sessions#destroy"
+
 end

@@ -16,7 +16,6 @@ class SessionsController < ApplicationController
 
 	def destroy
 		logout
-		redirect_to welcome_path
 	end
 
 	private
