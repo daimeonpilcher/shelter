@@ -12,8 +12,6 @@ Rails.application.routes.draw do
   
   resources :donations
 
-  resources :charges
-
   post "/sessions", to: "sessions#create"
   get "/sessions", to: "sessions#destroy"
 

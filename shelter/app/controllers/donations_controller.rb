@@ -4,17 +4,36 @@ class DonationsController < ApplicationController
 	end
 
 	def new
-		@donation = Donation.new
+		# @donation = Donation.new
 	end
 
 	def create
-		donation = current_user.donations.new(donation_params)
-		if donation.save
-			redirect_to user_path(current_user)
-		else
-			redirect_to new_donation_path
-		end
+		  	# Amount in cents
+  	@amount = 500
+
+	  customer = Stripe::Customer.create(
+    	:email => 'example@stripe.com',
+    	:card  => params[:stripeToken]
+  	)
+
+  	charge = Stripe::Charge.create(
+    	:customer    => customer.id,
+    	:amount      => @amount,
+    	:description => 'Rails Stripe customer',
+    	:currency    => 'usd'
+  	)
+
+	rescue Stripe::CardError => e
+  	flash[:error] = e.message
+  	redirect_to charges_path
 	end
+	# 	donation = current_user.donations.new(donation_params)
+	# 	if donation.save
+	# 		redirect_to user_path(current_user)
+	# 	else
+	# 		redirect_to new_donation_path
+	# 	end
+	# end
 
 	def show
 		@donation = Donation.find(params[:id])
