@@ -47,7 +47,7 @@ GEM
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
     builder (3.2.2)
-    byebug (5.0.0)
+    byebug (4.0.5)
       columnize (= 0.9.0)
     coderay (1.1.0)
     coffee-rails (4.1.0)
@@ -89,6 +89,9 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-byebug (3.1.0)
+      byebug (~> 4.0)
+      pry (~> 0.10)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
     rack (1.6.4)
@@ -160,12 +163,12 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootstrap-sass (~> 3.3.4)
-  byebug
   coffee-rails (~> 4.1.0)
   ffaker (~> 2.0.0)
   jbuilder (~> 2.0)
   jquery-rails
   pg
+  pry-byebug
   pry-rails
   rails (= 4.2.1)
   sass-rails (~> 5.0)
