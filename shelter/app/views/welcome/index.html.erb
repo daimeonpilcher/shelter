@@ -5,11 +5,20 @@
 			<p id="splashPar"> Fund hotel rooms for people living on the street</p>	
 		</div>
 
-		<div id="buttons">	
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signup-form">Sign Up</button>
+		<% if current_user %>
+			<div id="buttons">
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signup-form">Sign Out</button>
+				<p>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signup-form">Donate Now</button>
+				</p>
+		
+		<% else %>
+			<div id="buttons">	
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signup-form">Sign Up</button>
 
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-form">Log In</button>
-		</div>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-form">Log In</button>
+			</div>
+		<% end %>
 	</div>
 
 </div>
