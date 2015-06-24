@@ -12,7 +12,8 @@
  *
  *= require_self
  *= require body.scss
- = require welcome.scss
+ *= require welcome.scss
+ *= require clients.scss
 
 
 
