@@ -35,6 +35,7 @@ class DonationsController < ApplicationController
   		current_transaction = charge.id #make this the charge.receipt_number
   		new_donation = Donation.create(
   			:user_id => current_user.id,
+  			:campaign_id => Campaign.current_campaign.id,
   			:amount => current_amount,
   			:transaction_id => current_transaction 
   		)
