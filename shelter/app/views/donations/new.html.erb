@@ -1,14 +1,23 @@
 <%= render "/shared/navbar" %>
+
 <%= form_tag donations_path do %>
+
+
   <article>
     <label class="amount">
-      <span>Amount: $5.00</span>
-    </label>
+     There are currently <large><%= Client.count %></large> people who still need a home tonight!
+     <div id="tag-line">
+     	Do your part by donating $25 today.
+     </div>
+  </label>
   </article>
-
+<div id="button-stripe">
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="A month's subscription"
-          data-amount="500"></script>
+          data-amount="2500">
+  </script>
+ </div>
 <% end %>
+
 
