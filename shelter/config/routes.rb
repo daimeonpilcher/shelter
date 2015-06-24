@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :clients
 
-  resources :campaign
+  resources :campaigns
   
   resources :donations
 

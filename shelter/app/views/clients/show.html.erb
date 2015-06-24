@@ -1,0 +1,44 @@
+<%= render "/shared/navbar"  %>
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<h3 class="client_name"> <%=@client.first_name %> <%=@client.last_name.chars.first %> </h3>
+		</div>
+		<div class="col-md-8 col-md-offset-1">
+			<h3 class="client_name">About me</h3>
+		</div>
+
+	</div>
+	<div class="row">
+    <div class="col-md-3">
+      	<div class="rendered-data">
+      	
+	      	<h4><span class="client_image">   <%=image_tag(@client.photo_url, :class => "client_image2") %></span></h4>
+			<div class="row">
+				<div class="col-md-4">
+					<h6>Age: </h6>
+					<h6>Children: </h6>
+					<h6>City: </h6>
+				</div>
+				<div class="col-md-8">
+					<h6> <%=@client.age %> </h6>
+					<h6> <%=@client.number_of_children %> </h6>
+					<h6> <%=@client.city %> </h6>
+				</div>
+			</div>
+			
+    	</div>
+	</div>  	
+
+	<div class="col-md-8 col-md-offset-1 text-justify">
+
+
+
+
+			   <%=@client.bio %>  
+
+		
+	</div>
+	</div>
+
+</div>
