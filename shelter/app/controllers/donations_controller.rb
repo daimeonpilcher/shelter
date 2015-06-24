@@ -24,20 +24,19 @@ class DonationsController < ApplicationController
   		)
 
   		current_amount = charge.amount
-  		current_transaction = charge.id
+  		current_transaction = charge.id #make this the charge.receipt_number
   		new_donation = Donation.create(
   			:user_id => current_user.id,
   			:amount => current_amount,
-  			:transaction_id => current_transaction
+  			:transaction_id => current_transaction 
   		)
-		puts "Printing donation amount"
-		puts new_donation.amount
-		puts new_donation.user_id
 
 
 		rescue Stripe::CardError => e
   		flash[:error] = e.message
-  		redirect_to charges_path	
+  		redirect_to donations_path
+  		
+	
 	end
 
 	def show
