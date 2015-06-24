@@ -1,0 +1,21 @@
+<%= render "/shared/navbar"  %>
+<div class="right-content col-md-6 col-md-offset-1" >
+
+      <div class="page-header">
+
+        <h2><small>Clients</small></h2>
+
+        <ul>
+          <% @clients.each do |client| %>
+          <li>
+            
+            <%=image_tag("#{client.photo_url}") %>
+            <%= link_to "#{client.first_name}", client_path(client) %>
+            <%= "#{client.bio}" %>
+          </li>
+          <% end %>
+        </ul>
+
+      </div>
+
+    </div>

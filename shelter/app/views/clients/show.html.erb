@@ -1,0 +1,26 @@
+<%= render "/shared/navbar"  %>
+<div class="container" ".col-lg">
+    <div class="left-content col-md-5">
+      	<div class="rendered-data">
+
+	      	<h3><span class="label label-default"></span>   <%=image_tag(@client.photo_url) %></h3>
+			<h3><span class="label label-default">Name:</span>   <%=@client.first_name %> <%=@client.last_name.chars.first %></h3>
+			
+			<h3><span class="label label-default">Age:</span>   <%=@client.age %></h3>
+			<h3><span class="label label-default">Children:</span>   <%=@client.number_of_children %></h3>
+			<h3><span class="label label-default">City:</span>   <%=@client.city %></h3>
+			
+    	</div>
+	</div>  	
+
+	<div class="right-content col-md-6 col-md-offset-1" >
+
+      	<div class="page-header">
+
+
+			<h2><u>About me</u></h2>   
+				<p><h3 class="bio"><%=@client.bio %></p></h3>     
+
+		</div>
+	</div>
+</div>

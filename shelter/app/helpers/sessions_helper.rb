@@ -9,11 +9,13 @@ module SessionsHelper
 		@current_user || User.find_by({id: session[:user_id]})
 	end
 
-	def logged_in?
-		unless current_user
-			redirect_to welcome_path
-		end
-	end
+  def logged_in?
+    if current_user == false
+      return false
+    else
+      return true
+    end
+  end
 
 	def logout
 		@current_user = session[:user_id] = nil
