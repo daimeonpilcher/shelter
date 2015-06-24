@@ -7,7 +7,9 @@
         <ul>
           <% @clients.each do |client| %>
           <li>
-          <%= link_to "#{client.first_name}", client_path(client) %>
+            <%=image_tag("#{client.photo_url}") %>
+            <%= link_to "#{client.first_name}", client_path(client) %>
+            <%= "#{client.bio}" %>
           </li>
           <% end %>
         </ul>
