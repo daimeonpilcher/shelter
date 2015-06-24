@@ -8,8 +8,8 @@ class DonationsController < ApplicationController
 	end
 
 	def create
-		  	# Amount in cents
-  		@amount = 500
+		  	
+  		@amount = 500 # Amount in cents
 
 	  	customer = Stripe::Customer.create(
     		:email => 'example@stripe.com',
@@ -36,7 +36,6 @@ class DonationsController < ApplicationController
   		flash[:error] = e.message
   		redirect_to donations_path
   		
-	
 	
 	end
 
