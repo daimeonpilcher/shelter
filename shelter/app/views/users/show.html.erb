@@ -1,85 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-  <style>
-    
-
-    .left-content {
-      background-color: #eee;
-      height: 600px; 
-      border-style: solid;
-      border-width: 1px;  
-
-    }
-
-    .right-content {
-      height: 600px;
-      background-color: #eee;
-      border-style: solid;
-      border-width: 1px;  
-      overflow: scroll;   
-    }
-
-    .container h1 {
-       color: white;
-    }
-
-    header h1 {
-
-      padding-top: 5px;
-
-    }
-
-    .container-fluid h2 {
-      padding-left: 140px;
-
-    }
-
-    .rendered-data {
-      padding-top: 350px;
-      padding-left: 10px;
-    } 
-
-    .container {
-      padding-bottom: 50px;
-    }
-
-  </style>
-
-</head>
-
-<body>
-
-  <% if current_user == @user%>
+<% if current_user == @user%>
 <%= render "/show/navbar"  %>
-
   <div class="container-fluid">
       <h2>Welcome, <small><%= @user.first_name %></small></h2>
   </div>
-
   <div class="container" ".col-lg">
-
     <div class="left-content col-md-5">
-
-
+    <div>
+      <%= gravatar_for @user %>
+    </div>
+    <div class="outside-links">
+      <%= link_to "Edit your image", "https://secure.gravatar.com/", :target => "_blank" %>
+    </div>
       <div class="rendered-data">
-
         <h3><span class="label label-default">First Name:</span>   <%=@user.first_name %></h3>
         <h3><span class="label label-default">Last Name:</span>   <%=@user.last_name %></h3>
         <h3><span class="label label-default">City:</span>   <%=@user.city %></h3>
-
-        
       </div>
-
     </div>
-
     <div class="right-content col-md-6 col-md-offset-1" >
-
       <div class="page-header">
-
         <h2><small>Your donations</small></h2>
-
         <ul>
           <% @user.donations.each do |donation| %>
           <li>
@@ -87,17 +27,11 @@
           </li>
           <% end %>
         </ul>
-
       </div>
-
     </div>
-
   </div>
   <% else %>
-    <script type="text/javascript">
+<!--     <script type="text/javascript">
       window.location.href="/welcome"  // put your correct path in a string here
-    </script>
-  <% end %>
-
-</body>
-</html>
+    </script> -->
+<% end %>
