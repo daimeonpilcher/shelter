@@ -1,6 +1,8 @@
 class DonationsController < ApplicationController
 	 def index
 	 	@donations = current_user.donations
+	 	@amount = 2500
+
 	end
 
 	def new
@@ -9,19 +11,25 @@ class DonationsController < ApplicationController
 
 	def create
 		  	
-  		@amount = 500 # Amount in cents
+  		@amount = 2500 # Amount in cents
 
-	  	customer = Stripe::Customer.create(
-    		:email => 'example@stripe.com',
-    		:card  => params[:stripeToken]
-  		)
+      	begin
 
-  		charge = Stripe::Charge.create(
-    		:customer    => customer.id,
-    		:amount      => @amount,
-    		:description => 'Rails Stripe customer',
-    		:currency    => 'usd'
-  		)
+		  	customer = Stripe::Customer.create(
+	    		:email => 'example@stripe.com',
+	    		:card  => params[:stripeToken]
+	  		)
+
+	  		charge = Stripe::Charge.create(
+	    		:customer    => customer.id,
+	    		:amount      => @amount,
+	    		:description => 'Rails Stripe customer',
+	    		:currency    => 'usd'
+	  		)
+		
+		rescue Stripe::CardError => e
+  			flash[:error] = e.message
+  		end
 
   		current_amount = charge.amount
   		current_transaction = charge.id #make this the charge.receipt_number
@@ -31,11 +39,7 @@ class DonationsController < ApplicationController
   			:transaction_id => current_transaction 
   		)
 
-
-		rescue Stripe::CardError => e
-  		flash[:error] = e.message
-  		redirect_to donations_path
-  		
+  		redirect_to donations_path  		
 	
 	end
 
