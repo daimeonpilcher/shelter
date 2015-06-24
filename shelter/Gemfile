@@ -35,6 +35,12 @@ gem 'bootstrap-sass', '~> 3.3.4'
 # gem 'therubyracer', platforms: :ruby
 gem 'pry-rails'
 
+# Use Stripe for payment processing
+gem 'stripe'
+
+# Use for setting local environment variables such as Stripe API key
+gem 'figaro'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -43,7 +49,7 @@ gem 'pry-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'pry-byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
