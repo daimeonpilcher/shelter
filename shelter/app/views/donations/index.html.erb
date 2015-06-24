@@ -1,1 +1,11 @@
-I dont want to go this this page
+<%= render "/shared/navbar" %>
+<h2>Thanks, you donated $<strong><%=@amount / 100%>.00 </strong>!</h2>
+<% puts "the total amount is:" %>
+
+<% rand_num = rand(1..(Client.count)) %>
+
+
+<h3> You just helped <%= Client.find(rand_num).first_name %><a href="/clients/<%= rand_num %>"> click here to</a> learn more</h3>
+
+
+<h3>Click here to go back to your <a href="/users/<%=current_user.id %>">profile</a></h3>
