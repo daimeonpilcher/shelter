@@ -1,10 +1,9 @@
 <% if current_user == @user%>
-<%= render "/show/navbar"  %>
+<%= render "/shared/navbar" %>
   <div class="container-fluid">
-      <h2>Welcome, <small><%= @user.first_name %></small></h2>
-  </div>
   <div class="container" ".col-lg">
     <div class="left-content col-md-5">
+      <h2>Welcome, <%= @user.first_name %> </h2>
     <div>
       <%= gravatar_for @user %>
     </div>
@@ -12,26 +11,24 @@
       <%= link_to "Edit your image", "https://secure.gravatar.com/", :target => "_blank" %>
     </div>
       <div class="rendered-data">
-        <h3><span class="label label-default">First Name:</span>   <%=@user.first_name %></h3>
-        <h3><span class="label label-default">Last Name:</span>   <%=@user.last_name %></h3>
-        <h3><span class="label label-default">City:</span>   <%=@user.city %></h3>
+        <h3><span class="label label-default">First Name:</span> <%=@user.first_name %></h3>
+        <h3><span class="label label-default">Last Name:</span> <%=@user.last_name %></h3>
+        <h3><span class="label label-default">City:</span> <%=@user.city %></h3>
       </div>
     </div>
-    <div class="right-content col-md-6 col-md-offset-1" >
+    <div class="right-content col-md-5 col-md-offset-1" >
       <div class="page-header">
-        <h2><small>Your donations</small></h2>
+        <h2>Your donations</h2>
         <ul>
           <% @user.donations.each do |donation| %>
           <li>
-          <%= link_to "#{donation.amount}", donation_path(donation) %>
+          <%= link_to "$" + "#{donation.amount}", donation_path(donation) %>
           </li>
           <% end %>
         </ul>
       </div>
     </div>
   </div>
+  </div>
   <% else %>
-<!--     <script type="text/javascript">
-      window.location.href="/welcome"  // put your correct path in a string here
-    </script> -->
 <% end %>
