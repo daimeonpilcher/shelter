@@ -1,5 +1,13 @@
 class CampaignsController < ApplicationController
 	def show
-		@client = Client.find(params[:id])
+		@campaign = Campaign.find(params[:id])
 	end
+
+	def index
+		# @campaigns = Campaign.all
+		@campaign = Campaign.where(night_date: Date.today)
+	
+	end
+
+
 end

@@ -1,0 +1,18 @@
+<%= render "/show/navbar"  %>
+
+<div class="container" ".col-lg">
+    <div class="left-content col-md-5">
+      	<div class="rendered-data">
+      		<h2>Campaign</h2>
+
+	      	<h3><span class="label label-default">Date:</span>   <%=@campaign[0].night_date.strftime("%m/%d/%Y")%></h3>
+			<h3><span class="label label-default">Clients:</span>   <%=@campaign[0].clients.length %> </h3>
+			
+			<h3><span class="label label-default">Rooms needed:</span>   <%=@campaign[0].clients.length %></h3>
+			<h3><span class="label label-default">Amount needed:</span>   $<%=@campaign[0].clients.length*25 %></h3>
+    	</div>
+	</div>  	    
+
+		</div>
+	</div>
+</div>
