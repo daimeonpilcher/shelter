@@ -1,3 +1,63 @@
 // Place all the styles related to the donations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.amount {
+	padding-top: 150px;
+	padding-left: 300px;
+	padding-bottom: 10px;
+
+	font-size: 20pt;
+}
+
+#button-stripe {
+
+padding-left: 300px;
+	
+}
+
+.amount large {
+	color: red;
+}
+
+#tag-line {
+	font-size: 15pt ;
+	
+}
+
+#donation-headline {
+	padding-top: 150px;
+	padding-left: 300px;
+	padding-bottom: 10px;
+
+	font-size: 30pt;
+
+}
+
+#donation-body {
+	
+	padding-left: 320px;
+	font-size: 15pt;
+}
+
+#donation-body large {
+	font-weight: bold;
+}
+
+
+#donations-complete {
+	
+ 	padding-top: 150px;
+	padding-left: 200px;
+	padding-bottom: 10px;
+
+	font-size: 25pt;
+
+
+}
+
+
+
+
+
