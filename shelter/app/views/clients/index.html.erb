@@ -1,3 +1,18 @@
 <%= render "/shared/navbar"  %>
+<div class="right-content col-md-6 col-md-offset-1" >
 
-Some clients will go here.
+      <div class="page-header">
+
+        <h2><small>Clients</small></h2>
+
+        <ul>
+          <% @clients.each do |client| %>
+          <li>
+          <%= link_to "#{client.first_name}", client_path(client) %>
+          </li>
+          <% end %>
+        </ul>
+
+      </div>
+
+    </div>
