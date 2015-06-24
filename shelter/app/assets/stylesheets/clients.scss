@@ -4,3 +4,30 @@
 .bio{
 	text-align: justify;
 }
+
+p {
+	text-align: justify;
+}
+
+.client_image {
+	
+	width: 400px
+}
+
+.thumbnails {
+	height: 300px;
+	width: 400px;
+	padding: 50px;
+	border-radius: 25px;
+	display: inline-block;
+}
+
+.thumbnail {
+	padding: 15px;
+	display: inline-block;
+}
+
+.image_client {
+	clip-path: rect(400px, 300px);
+	z-index: 1000;
+}
