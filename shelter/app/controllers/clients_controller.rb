@@ -12,3 +12,4 @@ class ClientsController < ApplicationController
 		@clients = Client.all
 	end
 end
+
