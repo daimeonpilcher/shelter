@@ -32,6 +32,9 @@ gem 'bcrypt', '~> 3.1.7'
 # bootstrap
 gem 'bootstrap-sass', '~> 3.3.4'
 
+# bootswatch
+gem 'bootswatch-rails'
+
 # gem 'therubyracer', platforms: :ruby
 gem 'pry-rails'
 

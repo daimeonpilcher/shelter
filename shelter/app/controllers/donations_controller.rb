@@ -8,8 +8,8 @@ class DonationsController < ApplicationController
 	end
 
 	def create
-		  	# Amount in cents
-  		@amount = 500
+		  	
+  		@amount = 500 # Amount in cents
 
 	  	customer = Stripe::Customer.create(
     		:email => 'example@stripe.com',
@@ -37,21 +37,8 @@ class DonationsController < ApplicationController
 
 		rescue Stripe::CardError => e
   		flash[:error] = e.message
-  		redirect_to charges_path
-	
-	
-	#donation.transaction_id = charge.receipt_number
-	
-	
+  		redirect_to charges_path	
 	end
-
-	# donation = current_user.donations.new(donation_params)
-	# 	if donation.save
-	# 		redirect_to user_path(current_user)
-	# 	else
-	# 		redirect_to new_donation_path
-	# 	end
-	# end
 
 	def show
 		@donation = Donation.find(params[:id])

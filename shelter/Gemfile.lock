@@ -50,6 +50,8 @@ GEM
     bootstrap-sass (3.3.5)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
+    bootswatch-rails (3.3.5)
+      railties (>= 3.1)
     builder (3.2.2)
     byebug (4.0.5)
       columnize (= 0.9.0)
@@ -204,6 +206,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   better_errors
   bootstrap-sass (~> 3.3.4)
+  bootswatch-rails
   coffee-rails (~> 4.1.0)
   factory_girl
   ffaker (~> 2.0.0)
