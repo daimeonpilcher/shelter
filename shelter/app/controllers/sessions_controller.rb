@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 		@user = User.confirm(user_params)
 		if @user
 			login(@user)
-			redirect_to new_user_path
+			redirect_to user_path(current_user)
 		else
 			redirect_to welcome_path
 		end
@@ -16,7 +16,6 @@ class SessionsController < ApplicationController
 
 	def destroy
 		logout
-		redirect_to welcome_path
 	end
 
 	private

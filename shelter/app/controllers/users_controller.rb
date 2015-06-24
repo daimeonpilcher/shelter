@@ -54,5 +54,7 @@ class UsersController < ApplicationController
 						:password, :password_confirmation, 
 						:first_name, :last_name, :city
 						]
-		params.require(:user).permit(*white_list)				
+		params.require(:user).permit(*white_list)
+	end
+
 end
