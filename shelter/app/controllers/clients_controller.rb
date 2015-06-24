@@ -3,3 +3,4 @@ class ClientsController < ApplicationController
 		@client = Client.find(params[:id])
 	end
 end
+
