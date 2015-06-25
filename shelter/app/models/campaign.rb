@@ -1,4 +1,5 @@
 class Campaign < ActiveRecord::Base
+	validates :night_date, uniqueness: true
 	has_many :donations
 	has_many :campaign_clients
 	has_many :clients, through: :campaign_clients
