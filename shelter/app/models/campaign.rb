@@ -10,7 +10,7 @@ class Campaign < ActiveRecord::Base
 	end
 
 	def amount_needed
-		(amount_goal + 500) * clients.count #fix amount_goal in seed data, remove 500 when done
+		amount_goal * clients.count
 	end
 
 	def amount_raised
