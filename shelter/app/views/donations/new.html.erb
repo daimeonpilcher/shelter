@@ -6,13 +6,44 @@
 <%= form_tag donations_path do %>
 
 
+
+
+
+<!-- <div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8"><h1><small>Thank you for visting our site!<small></h1></div>
+  <div class="col-md-2"></div>
+</div>
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8"><h4>We completed our donations for today. Please come back tomorrow to help out.</h4></div>
+  <div class="col-md-2"></div>
+</div>
+
+
+
+
+ -->
+
+
+
+
   <article>
     <label class="amount">
+      
       <% people_needed_help = Client.count - Donation.where("created_at >= ?", Time.zone.now.beginning_of_day).count %>
-     We still need to get <large><%= pluralize( people_needed_help, 'person' ) %></large>  off the street and into a hotel room tonight!
-     <div id="tag-line">
-     	Help make this possible by donating $25 for a room now.
-     </div>
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8"><h4>We still need to get <large><%= pluralize( people_needed_help, 'person' ) %></large>  off the street and into a hotel room tonight!</h4></div>
+      <div class="col-md-2"></div>
+    </div>
+
+    <div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8"><div id="tag-line">Help make this possible by donating $25 for a room now.</div></div>
+  <div class="col-md-2"></div>
+</div>
+    
   </label>
   </article>
 <div id="button-stripe">
@@ -26,8 +57,7 @@
 
 <% else %>
 <div id="donations-complete">
-<h1><small>Thank you for visting our site!<small></h1>
-<h4>We completed our donations for today. Please come back tomorrow to help out.</h4>
+
 <div class="row">
   <div class="col-md-2"></div>
   <div class="col-md-8"><h1><small>Thank you for visting our site!<small></h1></div>
