@@ -3,17 +3,19 @@
   <div class="container-fluid">
   <div class="container" ".col-lg">
     <div class="left-content col-md-5">
-      <h2>Welcome, <%= @user.first_name %> </h2>
-    <div>
+      <div class="page-header">
+      <h2><small>Welcome, <%= @user.first_name %></small></h2>
+    </div>
+    <div id="picture">
       <%= gravatar_for @user %>
     </div>
     <div class="outside-links">
       <%= link_to "Edit your image", "https://secure.gravatar.com/", :target => "_blank" %>
     </div>
       <div class="rendered-data">
-        <h3><span class="label label-default">First Name:</span> <%=@user.first_name %></h3>
-        <h3><span class="label label-default">Last Name:</span> <%=@user.last_name %></h3>
-        <h3><span class="label label-default">City:</span> <%=@user.city %></h3>
+        <large>First Name: </large><%=@user.first_name %><br>
+        <large>Last Name: </large> <%=@user.last_name %><br>
+        <large>City: </large><%=@user.city %>
       </div>
     </div>
     <div class="right-content col-md-5 col-md-offset-1" >

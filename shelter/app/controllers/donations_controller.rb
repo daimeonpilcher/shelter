@@ -2,11 +2,13 @@ class DonationsController < ApplicationController
 	 def index
 	 	@donations = current_user.donations
 	 	@amount = 2500
+	 	@user = current_user || User.new
 
 	end
 
 	def new
 		# @donation = Donation.new
+		@user = current_user || User.new
 	end
 
 	def create
