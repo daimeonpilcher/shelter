@@ -8,7 +8,7 @@
   <article>
     <label class="amount">
       <% people_needed_help = Client.count - Donation.where("created_at >= ?", Time.zone.now.beginning_of_day).count %>
-     There are currently <large><%= people_needed_help %></large> people who still need a room tonight!
+     There are currently <large><%= pluralize( people_needed_help, 'person' ) %></large>  who still need a room tonight!
      <div id="tag-line">
      	Do your part by donating $25 today.
      </div>
@@ -30,5 +30,6 @@
 </div>
 
 <% end %>
+
 
 
