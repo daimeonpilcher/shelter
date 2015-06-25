@@ -1,4 +1,4 @@
-<%= render "/shared/navbar" %>
+
 
 <% if Donation.where("created_at >= ?", Time.zone.now.beginning_of_day).count < Client.count %>
 

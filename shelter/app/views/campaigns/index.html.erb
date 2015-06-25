@@ -48,6 +48,9 @@
   		<div id="donate-button">
   			<button onclick="window.location.href='/users/<%=current_user.id %>'" type="button"  class="btn btn-primary btn-lg">Come back tomorrow</button>
   		</div>
+
+  	<div>
+  		<%= render "/shared/donate_button.html.erb" %>
   	</div>
 
   	<% end %>
