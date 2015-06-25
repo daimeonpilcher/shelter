@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Shelter</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<title>Shelter</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+	<%= render "/shared/navbar" %>
+	<%= render "/shared/flash_messages", flash: flash %> 
+	<%= yield %>
+	<%= render "/shared/footer" %>
+	<%= render "/shared/modal_signup" %>
+	<%= render "/shared/modal_login" %>
 </body>
 </html>
