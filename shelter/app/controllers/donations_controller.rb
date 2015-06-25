@@ -1,57 +1,50 @@
 class DonationsController < ApplicationController
-	def index
-		@donations = current_user.donations
+	 def index
+	 	@donations = current_user.donations
+	 	@amount = 2500
+	 	@user = current_user || User.new
+
 	end
 
 	def new
 		# @donation = Donation.new
+		@user = current_user || User.new
 	end
 
 	def create
-		  	# Amount in cents
-  		@amount = 500
+		  	
+  		@amount = 2500 # Amount in cents
 
-	  	customer = Stripe::Customer.create(
-    		:email => 'example@stripe.com',
-    		:card  => params[:stripeToken]
-  		)
+      	begin
 
-  		charge = Stripe::Charge.create(
-    		:customer    => customer.id,
-    		:amount      => @amount,
-    		:description => 'Rails Stripe customer',
-    		:currency    => 'usd'
-  		)
+		  	customer = Stripe::Customer.create(
+	    		:email => 'example@stripe.com',
+	    		:card  => params[:stripeToken]
+	  		)
+
+	  		charge = Stripe::Charge.create(
+	    		:customer    => customer.id,
+	    		:amount      => @amount,
+	    		:description => 'Rails Stripe customer',
+	    		:currency    => 'usd'
+	  		)
+		
+		rescue Stripe::CardError => e
+  			flash[:error] = e.message
+  		end
 
   		current_amount = charge.amount
-  		current_transaction = charge.id
+  		current_transaction = charge.id #make this the charge.receipt_number
   		new_donation = Donation.create(
   			:user_id => current_user.id,
+  			:campaign_id => Campaign.current_campaign.id,
   			:amount => current_amount,
-  			:transaction_id => current_transaction
+  			:transaction_id => current_transaction 
   		)
-		puts "Printing donation amount"
-		puts new_donation.amount
-		puts new_donation.user_id
 
-
-		rescue Stripe::CardError => e
-  		flash[:error] = e.message
-  		redirect_to charges_path
-	
-	
-	#donation.transaction_id = charge.receipt_number
-	
+  		redirect_to donations_path  		
 	
 	end
-
-	# donation = current_user.donations.new(donation_params)
-	# 	if donation.save
-	# 		redirect_to user_path(current_user)
-	# 	else
-	# 		redirect_to new_donation_path
-	# 	end
-	# end
 
 	def show
 		@donation = Donation.find(params[:id])

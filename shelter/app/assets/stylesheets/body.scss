@@ -1,31 +1,30 @@
-#splashHeader {
-	margin: 0;
+#headline {
 	color: white;
-	text-align: center;
+	text-align: left;
 	font-size: 80px;
+	padding: 20px, 20px, 20px, 0px;
 }
 
 #box {
 	background: black;
 	background: -webkit-linear-gradient(bottom,rgba(0,0,0,.4), rgba(0,0,0,.4));
 	background: -moz-linear-gradient(bottom,rgba(0,0,0,.8), rgba(0,0,0,.4));
-	height: 150px;
+	height: 250px;
 	width: 600px;
 	position: relative;
-	top: 150px;
+	top: 80px;
 	margin: 0 auto;
 }
 
-#splashPar {
+#subhead {
 	color: white;
-	text-align: center;
-	margin-top: 20px;
-	font-size: 15px;
+	text-align: left;
+	font-size: 22px;
 }
 
 #buttons {
 	position: relative;
-	top: 175px;
+	top: 100px;
 	margin: 0 auto;
 	text-align: center;
 }
@@ -33,4 +32,8 @@
 .form-top {
 	width: 700px;
 	margin-top: 20px;
+}
+
+.alert-danger {
+	margin-bottom: 0px;
 }

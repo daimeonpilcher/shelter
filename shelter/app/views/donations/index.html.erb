@@ -1,0 +1,14 @@
+<%= render "/shared/navbar" %>
+
+<div id="donation-headline">
+	Thanks, you donated $<strong><%=@amount / 100%>.00 </strong>!
+</div>
+
+<% rand_num = rand(1..(Client.count)) %>
+
+<div id="donation-body">
+You just helped <%= Client.find(rand_num).first_name %><a href="/clients/<%= rand_num %>"> click here </a> to learn more <large>OR</large><br>
+
+Go back to your <a href="/users/<%=current_user.id %>">profile</a>
+
+</div>

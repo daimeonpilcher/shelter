@@ -12,13 +12,34 @@
  *
  *= require_self
  *= require body.scss
+ *= require welcome.scss
  *= require clients.scss
+ *= require welcome.scss
+ *= require donations.scss
+ *= require users.scss
+ *= require campaigns.scss
+
 
 
 
 
  */
 
- @import "bootstrap-sprockets";
- @import "bootstrap";
+//Import bootstrap-sprockets
+@import "bootstrap-sprockets";
+
+// Import cerulean variables
+@import "bootswatch/paper/variables";
+
+// Then bootstrap itself
+@import "bootstrap";
+
+// Bootstrap body padding for fixed navbar
+body { padding-top: 60px; }
+
+// And finally bootswatch style itself
+@import "bootswatch/paper/bootswatch";
+
+// Whatever application styles you have go last
+
 
