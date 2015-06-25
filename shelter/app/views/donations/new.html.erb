@@ -7,7 +7,8 @@
 
   <article>
     <label class="amount">
-     There are currently <large><%= Client.count - Donation.where("created_at >= ?", Time.zone.now.beginning_of_day).count %></large> people who still need a home tonight!
+      <% people_needed_help = Client.count - Donation.where("created_at >= ?", Time.zone.now.beginning_of_day).count %>
+     There are currently <large><%= people_needed_help %></large> people who still need a room tonight!
      <div id="tag-line">
      	Do your part by donating $25 today.
      </div>
@@ -24,8 +25,8 @@
 
 <% else %>
 <div id="donations-complete">
-Thank you for your visting our site!<br>
-We completed our donations for today come back tomorrow to help out.
+<h1><small>Thank you for visting our site!<small></h1>
+<h4>We completed our donations for today please come back tomorrow to help out.</h4>
 </div>
 
 <% end %>
