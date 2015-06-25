@@ -2,9 +2,17 @@
 	<div id="hero-image">
 		<div id="splash" class="row">
 			<div id="wrapper" class="container">
-				<div class="span2">
+				<div class="col-sm-5">
 					<h1 id="headline">Shelter</h1>
-					<p id="subhead">Fund hotel rooms for people living on the street</p>	
+					<span id="subhead">
+						<p>Fund hotel rooms for people living on the street</p>
+						<p>&nbsp;</p>
+						<p>As of 2014, in San Francisco, there are 6,436 homeless people and a little over half of them live on the street. <a href="http://www.businessinsider.com/homeless-near-twitter-headquarters-2014-1">Source</a></p>	
+					</span>
+					</span id="button">
+						<a href="#" class="btn btn-primary btn-outline btn-lg">DONATE NOW</a>
+					</span>
+
 				</div>
 				<div class="span2 pull-right">
 					<% if current_user %>
@@ -26,143 +34,7 @@
 		</div>
 	</div>
 </div>
-<div id="content" class="section section-primary">
-    <div class="wrapper">
-        <div class="row">
-            <div class="col-sm-6">
-                <h1<div class="span4">
-				<h1>About</h1>
-					Shelter was born out of the idea that morale affects one's ability to find and keep work, find housing, and have access to the things most people take for granted on a daily basis.  Things like Internet acess, News, 
-				<h2>How it works</h2>
-
-            </div>
-            <div class="col-sm-6">
-                <p class="text-info text-right">
-                    <br>
-                    <br>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="content">
-	<div id="wrapper">
-		<div class="row">
-			
-		</div>
-	</div>
-</div>	
-	<!-- Sign Up -->
-	<div id="signup-form" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-	  <div class="modal-dialog modal-lg">
-	    <div class="modal-content">
-   
-	      <!-- Sign Up form start -->
-
-	      <%= form_for @user, label_errors: true, html: {class: "form-horizontal form-top signup-modal"} do |f| %>
-
-	      	<% if @user.errors.any? %>
-    			<div id="error_explanation">
-      				<h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-     				<ul>
-      				<% @user.errors.full_messages.each do |msg| %>
-        				<li><%= msg %></li>
-      				<% end %>
-      				</ul>
-    			</div>
-  			<% end %>
-
-  				<button class="close" >&times;</button>
-
-			  	<div class="form-group">
-			    	<label for="inputFirstName3" class="col-sm-2 control-label">First Name</label>
-		    		<div class="col-sm-10">
-			    		<%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %>
-			    	</div>
-			  	</div>
-				<div class="form-group">
-				    <label for="inputLastName3" class="col-sm-2 control-label">Last Name</label>
-				    <div class="col-sm-10">			  
-				    	<%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
-				    </div>
-				</div>
-			  	<div class="form-group">
-			    	<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-			    	<div class="col-sm-10">			  
-			    		<%= f.text_field :email, placeholder: "Email", type: "email", class: "form-control" %>
-			    	</div>
-			  	</div>
-			  	<div class="form-group">
-			    	<label for="inputCurrentCity3" class="col-sm-2 control-label">City</label>
-			    	<div class="col-sm-10">			  
-			    		<%= f.text_field :city, placeholder: "City", class: "form-control" %>
-			    	</div>
-			  	</div>
-			  	<div class="form-group">
-			    	<label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-			    	<div class="col-sm-10">
-			    		<%= f.password_field :password, placeholder: "Password", class: "form-control" %>
-			    	</div>
-			  	</div>
-			  	<div class="form-group">
-			    	<label for="inputPassword3" class="col-sm-2 control-label">Confirm Password</label>
-			    	<div class="col-sm-10">
-			    		<%= f.password_field :password_confirmation, placeholder: "Confirm Password", class: "form-control" %>
-			    	</div>
-			  	</div>
-			  	<div class="form-group">
-				    <div class="col-sm-offset-2 col-sm-10">
-				  		<%= f.submit "Sign Up", class: "btn btn-default" %>
-				    </div>
-			  	</div>
-			<% end %>    
-	    </div>
-	  </div>
-	</div>
-
-
-	<!-- Login -->
-	<div id="login-form" class="modal fade bs-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-	  <div class="modal-dialog modal-lg">
-	    <div class="modal-content">
-	      
-	      <!-- Log In form start -->
-
-	      <%= form_for @user, label_errors: true, html: {class: "form-horizontal form-top"}, url: "/sessions", method: "post" do |f| %>
-			  
-				<button class="close" >&times;</button>
-
-			  <div class="form-group">
-			    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-			    <div class="col-sm-10">
-			      <%= f.text_field :email, placeholder: "Email", type: "email", class: "form-control" %>
-			    </div>
-			  </div>
-
-			  <div class="form-group">
-			    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-			    <div class="col-sm-10">
-			    	<%= f.password_field :password, placeholder: "Password", class: "form-control" %>
-			    </div>
-			  </div>
-
-			  <div class="form-group">
-			    <div class="col-sm-offset-2 col-sm-10">
-			      <div class="checkbox">
-			        <label>
-			          <input type="checkbox"> Remember me
-			        </label>
-			      </div>
-			    </div>
-			  </div>
-
-			  <div class="form-group">
-			    <div class="col-sm-offset-2 col-sm-10">
-			    	<%= f.submit "Log In", class: "btn btn-default" %>			     
-			    </div>
-			  </div>	          	       	  
-	      <% end %> 
-	    </div>
-	  </div>
-	</div>
+<%= render "/shared/about" %>
+	
+	
 
