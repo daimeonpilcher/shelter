@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 			login(@user)
 			redirect_to user_path(current_user)
 		else
-			flash[:danger] = 'Invalid email/password combination. Please try again.'
+			flash[:danger] = "Invalid email/password combination. Please try again."
 			redirect_to welcome_path
 		end
 	end
