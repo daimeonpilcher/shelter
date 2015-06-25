@@ -24,18 +24,10 @@
 
 	      <%= form_for @user, label_errors: true, html: {class: "form-horizontal form-top signup-modal"} do |f| %>
 
-	      	<% if @user.errors.any? %>
-    			<div id="error_explanation">
-      				<h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-     				<ul>
-      				<% @user.errors.full_messages.each do |msg| %>
-        				<li><%= msg %></li>
-      				<% end %>
-      				</ul>
-    			</div>
-  				<% end %>
+	      		<%= render "/shared/errors" %>
 
-  				<button class="close" >&times;</button>
+  				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+        		</button>
 
 			  <div class="form-group">
 			    <label for="inputFirstName3" class="col-sm-2 control-label">First Name</label>
@@ -92,8 +84,13 @@
 	      <!-- Log In form start -->
 
 	      <%= form_for @user, label_errors: true, html: {class: "form-horizontal form-top"}, url: "/sessions", method: "post" do |f| %>
+
+	      		<%= render "/shared/errors" %>
 			  
-				<button class="close" >&times;</button>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+        		</button>
+
+        		<h3 class="modal-title">Log In</h3>
 
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>

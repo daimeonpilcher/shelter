@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 		user = User.new(user_params)
 		if user.save
 			login user
+			flash[:success] = "Welcome to the Shelter App!"
 			redirect_to user_path(current_user)
 		else
 			redirect_to welcome_path
