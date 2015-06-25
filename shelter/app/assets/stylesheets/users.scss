@@ -2,43 +2,41 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.left-content {
-  background-color: #eee;
-  height: 600px; 
-  border-style: solid;
-  border-width: 1px;  
-
-}
-
-.right-content {
-  height: 600px;
-  background-color: #eee;
-  border-style: solid;
-  border-width: 1px;  
-  overflow: scroll;   
-}
-
-.container h1 {
-   color: white;
-}
-
-header h1 {
-
-  padding-top: 5px;
-
-}
-
-.container-fluid h2 {
-  padding-left: 140px;
-
-}
 
 .rendered-data {
-  padding-top: 350px;
-  padding-left: 10px;
-} 
-
-.container {
-  padding-bottom: 50px;
+  font-size: 15pt;
 }
+
+.rendered-data large {
+  padding-left: 120px;
+  
+  font-weight: bold;
+  font-size: 15pt;
+
+}
+
+.outside-links {
+  padding-bottom:20px;
+  padding-left: 110px
+ 
+}
+
+#picture {
+  padding-left: 110px;
+}
+
+.form-horizontal {
+  
+  padding-left: 200px;
+  padding-top: 30px;
+}
+
+#edit-heading {
+  padding-left: 160px;
+  padding-top: 50px;
+}
+.col-sm-offset-2 {
+  padding-top: 30px;
+}
+
 
