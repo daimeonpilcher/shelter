@@ -9,11 +9,13 @@ class UsersController < ApplicationController
 
 	def create
 		user_params = params.require(:user).permit(:first_name, :last_name, :email, :password, :city)
-		user = User.new(user_params)
-		if user.save
-			login user
+		@user = User.new(user_params)
+		if @user.save
+			login @user
+			flash[:success] = "Sign up successful. Welcome to the Shelter App!"
 			redirect_to user_path(current_user)
 		else
+			flash[:danger] = "Account already exists. Please try again."
 			redirect_to welcome_path
 		end
 	end
