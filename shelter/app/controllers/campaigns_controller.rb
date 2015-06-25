@@ -1,7 +1,7 @@
 class CampaignsController < ApplicationController
 	
 	def index
-		@campaign = Campaign.where(night_date: Date.today).limit(1)
+		@campaign = Campaign.where(night_date: Date.today).take
 	end
 
 	def show
