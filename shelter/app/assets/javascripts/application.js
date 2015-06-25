@@ -14,6 +14,7 @@
 //= require bootstrap-sprockets
 //= require main
 //= require validations
+//= require toggle
 
 
 
