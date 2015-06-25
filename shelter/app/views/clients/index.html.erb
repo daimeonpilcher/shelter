@@ -11,7 +11,7 @@
           <% slice.each do |client| %>
           <div class="col-md-4">
           <div class="thumbnail">
-            <%=image_tag("#{client.photo_url}", :class => "client_image") %>
+            <%= link_to image_tag("#{client.photo_url}", :class => "client_image"), client_path(client) %>
             <h3><%= "#{client.first_name}" %></h3>
             <p><%= truncate("#{client.bio}", length: 110) {link_to "Learn more..", client_path(client) } %></p>
           </div>

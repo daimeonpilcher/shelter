@@ -1,5 +1,6 @@
 <%= render "/shared/navbar" %>
 <div id="full-page">
+
 <% if Donation.where("created_at >= ?", Time.zone.now.beginning_of_day).count < Client.count %>
 
 <%= form_tag donations_path do %>
