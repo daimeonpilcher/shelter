@@ -31,7 +31,7 @@
   		<div>
   		
   		<div id="donate-button">
-  			<button onclick="window.location.href='/donations/new'" type="button"  class="btn btn-primary btn-lg">Donate Now</button>
+  			   <%= render "/shared/donate_button.html.erb" %>
   		</div>
   	</div>
 
@@ -46,11 +46,11 @@
   		<div>
   		
   		<div id="donate-button">
-  			<button onclick="window.location.href='/users/<%=current_user.id %>'" type="button"  class="btn btn-primary btn-lg">Come back tomorrow</button>
+  			<button onclick="window.location.href='/clients'" type="button"  class="btn btn-primary btn-lg">Come back tomorrow</button>
   		</div>
 
   	<div>
-  		<%= render "/shared/donate_button.html.erb" %>
+  
   	</div>
 
   	<% end %>
