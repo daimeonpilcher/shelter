@@ -1,14 +1,35 @@
-<%= render "/shared/navbar" %>
+
+
+<% if Donation.where("created_at >= ?", Time.zone.now.beginning_of_day).count < Client.count %>
+
 <%= form_tag donations_path do %>
+
+
   <article>
     <label class="amount">
-      <span>Amount: $5.00</span>
-    </label>
+      <% people_needed_help = Client.count - Donation.where("created_at >= ?", Time.zone.now.beginning_of_day).count %>
+     There are currently <large><%= pluralize( people_needed_help, 'person' ) %></large>  who still need a room tonight!
+     <div id="tag-line">
+     	Do your part by donating $25 today.
+     </div>
+  </label>
   </article>
-
+<div id="button-stripe">
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="A month's subscription"
-          data-amount="500"></script>
+          data-amount="2500">
+  </script>
+ </div>
 <% end %>
+
+<% else %>
+<div id="donations-complete">
+<h1><small>Thank you for visting our site!<small></h1>
+<h4>We completed our donations for today please come back tomorrow to help out.</h4>
+</div>
+
+<% end %>
+
+
 
