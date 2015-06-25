@@ -16,14 +16,14 @@
 	      	<h4><span class="client_image">   <%=image_tag(@client.photo_url, :class => "client_image2") %></span></h4>
 			<div class="row">
 				<div class="col-md-4">
-					<h6>Age: </h6>
-					<h6>Children: </h6>
-					<h6>City: </h6>
+					<h5>Age: </h5>
+					<h5>Children: </h5>
+					<h5>City: </h5>
 				</div>
 				<div class="col-md-8">
-					<h6> <%=@client.age %> </h6>
-					<h6> <%=@client.number_of_children %> </h6>
-					<h6> <%=@client.city %> </h6>
+					<h5> <%=@client.age %> </h5>
+					<h5> <%=@client.number_of_children %> </h5>
+					<h5> <%=@client.city %> </h5>
 				</div>
 			</div>
 			
@@ -33,11 +33,8 @@
 	<div class="col-md-8 col-md-offset-1 text-justify">
 
 
-
-
 			   <%=@client.bio %>  
 
-		
 	</div>
 	</div>
 
