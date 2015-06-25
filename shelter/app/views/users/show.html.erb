@@ -12,12 +12,25 @@
     <div class="outside-links">
       <%= link_to "Edit your profile picture", "https://secure.gravatar.com/", :target => "_blank" %>
     </div>
+
+
+
       <div class="rendered-data">
-        <large>First Name: </large><%=@user.first_name %><br>
-        <large>Last Name: </large> <%=@user.last_name %><br>
-        <large>City: </large><%=@user.city %>
+        <div class="row">
+          <div class="col-md-4">
+            <h5>First Name: </h5>
+            <h5>Last Name: </h5>
+            <h5>City: </h5>
+          </div>
+          <div class="col-md-8">
+            <h5> <%=@user.first_name %></h5>
+            <h5> <%=@user.last_name %> </h5>
+            <h5> <%=@user.city %> </h5>
+          </div>
       </div>
+
     </div>
+  </div>
     <div class="right-content col-md-5 col-md-offset-1" >
       <div class="page-header">
         <h2><small>Your donations</small></h2>
