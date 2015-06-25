@@ -8,6 +8,7 @@
 </head>
 <body>
 	<%= render "/shared/navbar" %>
+	<%= render "/shared/flash_messages", flash: flash %> 
 	<%= yield %>
 	<%= render "/shared/footer" %>
 	<%= render "/shared/modal_signup" %>
