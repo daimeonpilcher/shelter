@@ -1,8 +1,8 @@
-#splashHeader {
+#headline {
 	color: white;
-	text-align: center;
+	text-align: left;
 	font-size: 80px;
-	padding: 20px;
+	padding: 20px, 20px, 20px, 0px;
 }
 
 #box {
@@ -16,9 +16,9 @@
 	margin: 0 auto;
 }
 
-#splashPar {
+#subhead {
 	color: white;
-	text-align: center;
+	text-align: left;
 	font-size: 22px;
 }
 
