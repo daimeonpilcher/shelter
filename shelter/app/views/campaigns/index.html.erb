@@ -1,7 +1,7 @@
 <%= render "/shared/navbar" %>
 <div class="container">
 	<div class="row-fluid">
-		<div class="col-md-12">
+		<div class="col-md-10">
 			<h2><small>Make a difference in someone's life today.</small></h2>
 		</div>
 	</div>
@@ -13,10 +13,10 @@
       			
       			<div id="title">Today's Campaign</div>
       	
-	      <large>Date: </large><%=@campaign.night_date.strftime("%m/%d/%Y")%><br>
-				<large>Clients: </large><%=@campaign.clients.length %> <br>
-				<large>Rooms needed: </large><%= @campaign.rooms_still_needed %><br>
-				<large>Amount needed: </large>$<%=@campaign.amount_still_needed %><br>
+	      <h5><b>Date:</b><%=@campaign.night_date.strftime("%m/%d/%Y")%></h5>
+				<h5><b>Clients:</b> <%=@campaign.clients.length %> </h5>
+				<h5><b>Rooms needed:</b><%= @campaign.rooms_still_needed %></h5>
+				<h5><b>Amount needed: </b>$<%=@campaign.amount_still_needed %></h5>
     		</div>
 		</div>
 	</div>
