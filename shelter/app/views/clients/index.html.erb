@@ -1,13 +1,14 @@
-<div class="container" id="content">
-    <h2><small>Clients</small></h2>
+<div class="container" id="clients">
+    <h3><small>Clients</small></h3>
+    <h3>We are proud to represent these people who are looking to better their lives.</h3>
     <% @clients.each_slice(3) do |slice| %>
         <div class="row">
           <% slice.each do |client| %>
             <div class="col-md-4">
             <div class="thumbnail">
-              <%= link_to image_tag("#{client.photo_url}", :class => "client_image"), client_path(client) %>
-              <h3><%= "#{client.first_name}" %></h3>
-              <p><%= truncate("#{client.bio}", length: 110) {link_to "Learn more..", client_path(client) } %></p>
+              <%= link_to image_tag("#{client.photo_url}", :class => "client_thumb_image"), client_path(client) %>
+              <h4><%= "#{client.first_name}" %></h4>
+              <p><%= truncate("#{client.bio}", length: 250, separator: ' ') {link_to "Learn more...", client_path(client) } %></p>
             </div>
         </div>
           <% end %>

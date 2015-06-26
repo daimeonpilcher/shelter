@@ -24,8 +24,8 @@ module SessionsHelper
 
 	def redirect_unauthenticated
     	unless logged_in?
-      		flash[:alert] = "Sorry, you must be logged in to see this content."
-      		return redirect_to login_path
+      		flash[:alert] = "Sorry, you must be logged in to donate."
+      		return redirect_to welcome_path
     	end
 	end
 end
