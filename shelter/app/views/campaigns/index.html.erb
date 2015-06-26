@@ -9,8 +9,8 @@
       		<div class="rendered-data">  			
       			<div id="title">Today's Campaign</div>      	
 	      <h5><b>Date:</b><%=@campaign.night_date.strftime("%m/%d/%Y")%></h5>
-				<h5><b>Clients:</b> <%=@campaign.clients.length %> </h5>
-				<h5><b>Rooms needed:</b><%= @campaign.rooms_still_needed %></h5>
+				<h5><b>Clients: </b><%=@campaign.clients.length %> </h5>
+				<h5><b>Rooms needed: </b><%= @campaign.rooms_still_needed %></h5>
 				<h5><b>Amount needed: </b>$<%=@campaign.amount_still_needed %></h5>
     		</div>
 		</div>
