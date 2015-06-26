@@ -12,16 +12,11 @@
     </div>
       <div class="rendered-data">
         <div class="row">
-          <div class="col-md-4">
-            <h5>First Name: </h5>
-            <h5>Last Name: </h5>
-            <h5>City: </h5>
-          </div>
-          <div class="col-md-8">
-            <h5> <%=@user.first_name %></h5>
-            <h5> <%=@user.last_name %> </h5>
-            <h5> <%=@user.city %> </h5>
-          </div>
+          <div class="col-md-10">
+            <h5><b>First Name:</b> <%=@user.first_name %> </h5>
+            <h5><b>Last Name:</b> <%=@user.last_name %></h5>
+            <h5><b>City: </b> <%=@user.city %></h5>
+          </div>   
       </div>
     </div>
   </div>
@@ -44,7 +39,6 @@
         </table>
       </div>
     </div>
-  </div>
   </div>
   <% else %>
   <script type="text/javascript">

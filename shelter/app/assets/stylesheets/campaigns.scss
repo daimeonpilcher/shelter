@@ -2,10 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.col-md-12 {
+
+.col-md-10 {
 	
 	padding-top: 40px;
-	margin-left: -50px;
+	
 }
 .box1 {
 	
@@ -22,12 +23,13 @@
 	font-size: 35px;
 	padding-bottom:10px;
 	padding-top: 20px;
-	font-weight: bold;
+
 
 	
 }
 .rendered-data large {
 	padding-left: 30px;
+	font-size: 20px;
 }
 
 #funding_needed {
