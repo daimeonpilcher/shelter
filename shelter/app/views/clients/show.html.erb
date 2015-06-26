@@ -1,28 +1,20 @@
-<div class="container" id="content">
+<div class="container" id="client-detail">
+	<h3><small>Client Story</small></h3>
 	<div class="row">
 		<div class="col-md-3">
-			<h3 class="client_name"> <%=@client.first_name %> <%=@client.last_name.chars.first %> </h3>
+			<h3> <%=@client.first_name %></h3>
+			<%=image_tag(@client.photo_url, :class => "client_story_image") %>
 		</div>
 		<div class="col-md-8 col-md-offset-1">
-			<h3 class="client_name">About me</h3>
+			<h3>About me</h3>
+			<%=@client.bio %> 
 		</div>
-	</div>
+	</div>			
 	<div class="row">
-    <div class="col-md-3">
-      	<div class="rendered-data">
-	      	<h4><span class="client_image">   <%=image_tag(@client.photo_url, :class => "client_image2") %></span></h4>
-			<div class="row">
-				<div class="col-md-10">
-					<h5><b>Age:</b> <%=@client.age %></h5>
-					<h5><b>Children:</b> <%=@client.number_of_children %> </h5>
-					<h5><b>City:</b> <%=@client.city %></h5>
-				</div>
-		
-			</div>
-    	</div>
-	</div>  	
-	<div class="col-md-8 col-md-offset-1 text-justify">
-		<%=@client.bio %>  
-	</div>
+		<div class="col-md-12">
+			<h5><b>Age:</b> <%=@client.age %></h5>
+			<h5><b>Children:</b> <%=@client.number_of_children %> </h5>
+			<h5><b>City:</b> <%=@client.city %></h5>
+		</div>
 	</div>
 </div>
