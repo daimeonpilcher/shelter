@@ -1,7 +1,5 @@
 <% if current_user == @user%>
-<%= render "/shared/navbar" %>
-  <div class="container-fluid">
-  <div class="container" ".col-lg">
+  <div id="content" class="container col-lg container-fluid">
     <div class="left-content col-md-5">
       <div class="page-header">
       <h2><small>Welcome, <%= @user.first_name %></small></h2>
@@ -12,23 +10,14 @@
     <div class="outside-links">
       <%= link_to "Edit your profile picture", "https://secure.gravatar.com/", :target => "_blank" %>
     </div>
-
-
-
       <div class="rendered-data">
         <div class="row">
-          <div class="col-md-4">
-            <h5>First Name: </h5>
-            <h5>Last Name: </h5>
-            <h5>City: </h5>
-          </div>
-          <div class="col-md-8">
-            <h5> <%=@user.first_name %></h5>
-            <h5> <%=@user.last_name %> </h5>
-            <h5> <%=@user.city %> </h5>
-          </div>
+          <div class="col-md-10">
+            <h5><b>First Name:</b> <%=@user.first_name %> </h5>
+            <h5><b>Last Name:</b> <%=@user.last_name %></h5>
+            <h5><b>City: </b> <%=@user.city %></h5>
+          </div>   
       </div>
-
     </div>
   </div>
     <div class="right-content col-md-5 col-md-offset-1" >
@@ -40,7 +29,6 @@
           <th>Transaction</th>
           <th>Amount</th>    
         </tr>
-        
         <% @user.donations.each do |donation| %>
         <tr>
           <td><%=  "#{donation.created_at.strftime("%m/%d/%Y")}" %></td>
@@ -51,7 +39,6 @@
         </table>
       </div>
     </div>
-  </div>
   </div>
   <% else %>
   <script type="text/javascript">
