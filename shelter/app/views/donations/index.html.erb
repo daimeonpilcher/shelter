@@ -1,15 +1,10 @@
-<%= render "/shared/navbar" %>
-<div id="full-page">
-<div id="donation-headline">
-	Thanks, you donated $<strong><%=@amount / 100%>.00 </strong>!
+<div class="container text-center">
+	<% rand_num = rand(1..(Client.count)) %>
+	<%= image_tag(Client.find(rand_num).photo_url, :class => "img-circle", :id => "thank-you-image") %>
+	<h3>Thank you! You donated $<strong><%=@amount / 100%>.00</strong>.</h3>
+	<h5>You just helped <strong><a href="/clients/<%= rand_num %>"><%= Client.find(rand_num).first_name %></a></strong> get off the street and into a hotel room for the night.</h5>
+	<br>
+	<%= render "/shared/socialshare" %>
 </div>
 
-<% rand_num = rand(1..(Client.count)) %>
 
-<div id="donation-body">
-You just helped <%= Client.find(rand_num).first_name %><a href="/clients/<%= rand_num %>"> click here </a> to learn more <large>OR</large><br>
-
-Go back to your <a href="/users/<%=current_user.id %>">profile</a>
-
-</div>
-</div>

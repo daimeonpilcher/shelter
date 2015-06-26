@@ -1,28 +1,37 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-   <div class="container-fluid">
+<nav class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-    <a class="navbar-brand" href="/">Shelter</a>
-   </div>
-   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Shelter</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-         <li><%= link_to "View Clients", clients_path %></li>
+        <li><%= link_to "View Clients", clients_path %></li>
          <li><%= link_to "Today's Campaign", campaigns_path %></li>
          <% if current_user %>
-            <li class="dropdown">
-               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Account<span class="caret"></span></a>
-               <ul class="dropdown-menu" role="menu">
-                  <li><%= link_to "Profile", user_path(current_user.id) %></li>
-                  <li><%= link_to "Edit Profile", edit_user_path(current_user.id) %></li>
-                  <li><%= link_to "New Donation", new_donation_path %></li>
-                  <li class="divider"></li>
-                  <li><%= link_to "Log Out", sessions_path %></li>
-               </ul>
-            </li>
-         <% else %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Profile", user_path(current_user.id) %></li>
+              <li><%= link_to "Edit Profile", edit_user_path(current_user.id) %></li>
+              <li><%= link_to "New Donation", new_donation_path %></li>
+              <li role="separator" class="divider"></li>
+              <li><%= link_to "Log Out", sessions_path %></li>
+          </ul>
+        </li>
+        <% else %>
             <li><a href="#" data-target="#signup-form" data-toggle="modal">Sign Up</a></li>
             <li class="active"><a href="#" data-target="#login-form" data-toggle="modal">Log In</a></li>
          <% end %>
       </ul>
-   </div>
-</div>
-</header>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

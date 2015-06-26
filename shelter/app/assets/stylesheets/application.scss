@@ -12,17 +12,6 @@
  *
  *= require_self
  *= require body.scss
- *= require welcome.scss
- *= require clients.scss
- *= require welcome.scss
- *= require donations.scss
- *= require users.scss
- *= require campaigns.scss
-
-
-
-
-
  */
 
 //Import bootstrap-sprockets
@@ -41,5 +30,7 @@ body { padding-top: 60px; }
 @import "bootswatch/paper/bootswatch";
 
 // Whatever application styles you have go last
+
+
 
 

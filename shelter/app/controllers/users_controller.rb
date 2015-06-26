@@ -26,10 +26,20 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+		if current_user == @user
+    	else
+      		flash[:warning] = "Sorry, you can only view your own profile. Bummer, we know."
+      		redirect_to user_path(current_user)
+    	end
 	end
 
 	def edit
 		@user = User.find(params[:id])
+		if current_user == @user
+    	else
+      		flash[:warning] = "Sorry, you can only edit your own profile. Nice try, though."
+      		redirect_to user_path(current_user)
+    	end
 	end
 
 	def update
