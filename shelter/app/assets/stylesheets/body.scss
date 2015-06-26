@@ -1,9 +1,25 @@
+html,body{
+    height: 100%
+}
 
 #hero-image {
 	background: url('shelter-splash.jpg') no-repeat center center;
 	background-size: cover;
 	width: 100%;
 	height: 100vh;
+}
+
+h1#title {
+	color: white;
+	padding-top: 20px;
+}
+
+h3#tagline {
+	color: white;
+}
+
+blockquote#stats {
+	color: white;
 }
 
 #thank-you-image {
@@ -23,4 +39,18 @@
 .client_story_image { 
 	max-height: 300px;
 	padding: 5px;
+}
+
+span#sign-up-close-btn {
+	padding: 30px;
+	margin-top: 5px;
+}
+
+span#log-in-close-btn {
+	padding: 30px;
+	margin-top: 5px;
+}
+
+.alert-danger {
+	margin-bottom: 0px;
 }

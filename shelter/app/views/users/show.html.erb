@@ -1,26 +1,19 @@
 <% if current_user == @user%>
-  <div id="content" class="container col-lg container-fluid">
+  <div class="container col-lg container-fluid" id="profile">
+    <h3><small>Your Profile</small></h3>
+    <h3>Welcome, <%= @user.first_name %>, we're so glad you stopped by.</h3>
     <div class="left-content col-md-5">
-      <div class="page-header">
-      <h2><small>Welcome, <%= @user.first_name %></small></h2>
-    </div>
-    <div id="picture">
-      <%= gravatar_for @user %>
-    </div>
-    <div class="outside-links">
-      <%= link_to "Edit your profile picture", "https://secure.gravatar.com/", :target => "_blank" %>
-    </div>
-      <div class="rendered-data">
-        <div class="row">
-          <div class="col-md-10">
+      <br>
+        <div id="picture">
+          <%= gravatar_for @user %>
+        </div>
+        <%= link_to "Edit your profile picture", "https://secure.gravatar.com/", :target => "_blank" %>
             <h5><b>First Name:</b> <%=@user.first_name %> </h5>
             <h5><b>Last Name:</b> <%=@user.last_name %></h5>
             <h5><b>City: </b> <%=@user.city %></h5>
-          </div>   
-      </div>
-    </div>
-  </div>
-    <div class="right-content col-md-5 col-md-offset-1" >
+    </div>   
+    <div class="right-content col-md-6 col-md-offset-1" >
+      
       <div class="page-header">
         <h2><small>Your donations</small></h2>
         <table class="reference" style="width:100%">
@@ -43,5 +36,5 @@
   <% else %>
   <script type="text/javascript">
       window.location.href="/welcome"  // put your correct path in a string here
-    </script>
+  </script>
 <% end %>
