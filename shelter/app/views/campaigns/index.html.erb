@@ -1,18 +1,13 @@
-<%= render "/shared/navbar" %>
 <div class="container">
 	<div class="row-fluid">
 		<div class="col-md-12">
 			<h2><small>Make a difference in someone's life today.</small></h2>
 		</div>
 	</div>
-  
 	<div class="row-fluid">
 		<div class="col-md-5" class="box1">
-
-      		<div class="rendered-data">
-      			
+      		<div class="rendered-data">  			
       			<div id="title">Today's Campaign</div>
-      	
 	      <large>Date: </large><%=@campaign.night_date.strftime("%m/%d/%Y")%><br>
 				<large>Clients: </large><%=@campaign.clients.length %> <br>
 				<large>Rooms needed: </large><%= @campaign.rooms_still_needed %><br>
@@ -21,7 +16,6 @@
 		</div>
 	</div>
 	<div class="col-md-7">
-		
 	<% if @campaign.amount_still_needed > 0 %>
 		<div id="funding_needed">Funding Still Needed</div>
 			<div class="progress">
@@ -31,12 +25,10 @@
 			</div>
   			</div>
   		<div>
-  		
   		<div id="donate-button">
   			   <%= render "/shared/donate_button.html.erb" %>
   		</div>
   	</div>
-
   	<% else %>
   		<div id="funding_needed">Funding Complete!</div>
 			<div class="progress">
@@ -44,25 +36,14 @@
   					aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:<%= @campaign.percentage_raised %>%">
   				</div>
 			</div>
-
       <div id="donate-button">
         <button onclick="window.location.href='/clients'" type="button"  class="btn btn-primary btn-lg">Come back tomorrow</button>
       </div>
   			</div>
   		<div>
-  		
-  		
-
   	<div>
-  
   	</div>
-
   	<% end %>
-
-
-
-
-
 	</div>
 </div>
 
